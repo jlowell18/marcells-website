@@ -279,3 +279,7 @@ header.site-h{padding:0}header.site-h .in{max-width:1140px;margin:0 auto;padding
 @media (max-width:900px){.topbar .in{padding:8px 16px;font-size:12px}header.site-h .in{padding:12px 16px}.menu-btn{display:block}
  nav.site-n{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px 16px 16px;z-index:20}
  nav.site-n.open{display:flex}nav.site-n a{padding:10px 0;display:block!important}nav.site-n a.login,nav.site-n a.cta{margin-top:8px;text-align:center}}
+
+/* phone: inline grid styles on a few sections must yield */
+@media (max-width:900px){.svc,.gal,.charts,.isites,.icards,.covs,.values{grid-template-columns:1fr!important}.gal,.icards{grid-template-columns:1fr 1fr!important}
+ .hero .wrap{padding-top:70px}.in{font-size:38px}.app-side a{font-size:12px;padding:7px 8px}body{overflow-x:hidden}}
