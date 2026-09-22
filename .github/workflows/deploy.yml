@@ -22,19 +22,20 @@ jobs:
       - name: Import images that aren't in the repo yet
         run: |
           mkdir -p site/assets; added=0
-          while IFS='|' read -r name url; do
-            name=$(echo "$name" | xargs); url=$(echo "$url" | xargs)
-            [ -z "$name" ] || [ "${name:0:1}" = "#" ] && continue
+          grep -v '^[[:space:]]*#' tools/images.txt | grep '|' | while IFS='|' read -r name url; do
+            name="${name#"${name%%[![:space:]]*}"}"; name="${name%"${name##*[![:space:]]}"}"
+            url="${url#"${url%%[![:space:]]*}"}"; url="${url%"${url##*[![:space:]]}"}"
+            [ -z "$name" ] && continue
             if [ ! -s "site/assets/$name" ]; then
               for i in 1 2 3; do curl -fsSL --retry 2 -A "Mozilla/5.0" -o "site/assets/$name" "$url" && break || sleep 5; done
               [ -s "site/assets/$name" ] && { echo "fetched $name"; added=1; } || { echo "MISSING $name"; rm -f "site/assets/$name"; }
             fi
-          done < tools/images.txt
+          done
           # A missing photo must never break the page: fall back to the hero.
           for f in eq-air-systems.jpg eq-balers.jpg eq-conveyors.jpg eq-containers.jpg eq-gaylord.jpg; do
             [ -s "site/assets/$f" ] || cp site/assets/hero.jpg "site/assets/$f" 2>/dev/null || true
           done
-          if [ "$added" = 1 ]; then
+          if [ -n "$(git status --porcelain site/assets)" ]; then
             git config user.name "deploy"; git config user.email "actions@users.noreply.github.com"
             git add site/assets && git commit -qm "Import images from GoDaddy CDN" && git push || true
           fi
