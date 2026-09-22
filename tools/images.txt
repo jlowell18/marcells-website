@@ -1,0 +1,8 @@
+# filename | source URL (GoDaddy's image CDN; base image, no transform path)
+hero.jpg | https://img1.wsimg.com/isteam/ip/406653f7-77e9-486d-8485-342cb5def842/fm%3Df%203518.jpg
+logo.webp | https://img1.wsimg.com/isteam/ip/406653f7-77e9-486d-8485-342cb5def842/logo_marcells.webp
+favicon.png | https://img1.wsimg.com/isteam/ip/406653f7-77e9-486d-8485-342cb5def842/logo_marcells.webp/:/rs=w:64,h:64,cg:true,m/qt=q:90
+service-paper.jpg | https://img1.wsimg.com/isteam/ip/406653f7-77e9-486d-8485-342cb5def842/Untitled%20design.jpg/:/cr=t:9.68%25,l:33.48%25,w:60.33%25,h:80.65%25/rs=w:900,cg:true,m
+service-secure.webp | https://img1.wsimg.com/isteam/ip/406653f7-77e9-486d-8485-342cb5def842/service2.1.webp/:/cr=t:15.25%25,l:15.47%25,w:84.53%25,h:84.74%25/rs=w:900,cg:true,m
+service-newpaper.webp | https://img1.wsimg.com/isteam/ip/406653f7-77e9-486d-8485-342cb5def842/60GSM-Woodfree-Offset-Paper-Large-Size.webp/:/cr=t:10.72%25,l:4.97%25,w:89.29%25,h:67.13%25/rs=w:900,cg:true,m
+services-hero.jpg | https://img1.wsimg.com/isteam/stock/3526/:/cr=t:12.5%25,l:0%25,w:100%25,h:75%25/rs=w:1240,h:620,cg:true

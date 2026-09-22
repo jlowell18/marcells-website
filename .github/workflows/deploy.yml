@@ -1,0 +1,59 @@
+# Publish marcellspaper.com to Cloudflare Pages on every push to main.
+# 1. Fetch any images listed in tools/images.txt that aren't in site/assets yet
+#    (GoDaddy's image CDN answers even when the GoDaddy site itself is timing out).
+# 2. Build the HTML from tools/content.py.
+# 3. Create the Pages project the first time, then upload the site folder.
+# Preview: https://marcells-website.pages.dev   Production: marcellspaper.com
+# once Jared approves and the DNS A records are switched.
+name: Deploy website
+on:
+  push:
+    branches: [main]
+    paths-ignore: [".github/workflows/cloudflare-check.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: deploy
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Import images that aren't in the repo yet
+        run: |
+          mkdir -p site/assets; added=0
+          while IFS='|' read -r name url; do
+            name=$(echo "$name" | xargs); url=$(echo "$url" | xargs)
+            [ -z "$name" ] || [ "${name:0:1}" = "#" ] && continue
+            if [ ! -s "site/assets/$name" ]; then
+              for i in 1 2 3; do curl -fsSL --retry 2 -A "Mozilla/5.0" -o "site/assets/$name" "$url" && break || sleep 5; done
+              [ -s "site/assets/$name" ] && { echo "fetched $name"; added=1; } || { echo "MISSING $name"; rm -f "site/assets/$name"; }
+            fi
+          done < tools/images.txt
+          # A missing photo must never break the page: fall back to the hero.
+          for f in eq-air-systems.jpg eq-balers.jpg eq-conveyors.jpg eq-containers.jpg eq-gaylord.jpg; do
+            [ -s "site/assets/$f" ] || cp site/assets/hero.jpg "site/assets/$f" 2>/dev/null || true
+          done
+          if [ "$added" = 1 ]; then
+            git config user.name "deploy"; git config user.email "actions@users.noreply.github.com"
+            git add site/assets && git commit -qm "Import images from GoDaddy CDN" && git push || true
+          fi
+      - name: Build pages
+        run: python3 tools/build_site.py
+      - name: Create the Pages project if it doesn't exist
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/pages/projects/marcells-website" -H "Authorization: Bearer $CF_TOKEN")
+          if [ "$code" != "200" ]; then
+            curl -sS -X POST "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/pages/projects" \
+              -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json" \
+              -d '{"name":"marcells-website","production_branch":"main"}' | python3 -c "import json,sys; d=json.load(sys.stdin); print('created' if d.get('success') else d.get('errors'))"
+          else echo "project exists"; fi
+      - name: Upload to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy site --project-name=marcells-website --branch=main --commit-dirty=true
