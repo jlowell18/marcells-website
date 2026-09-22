@@ -74,15 +74,15 @@ EQUIPMENT = f"""
   <h2>Equipment</h2>
   <p class="sub">Sized to your tonnage, installed by us, supported for the life of the program.</p>
   <div class="gallery">
-    <figure><img src="assets/eq-balers.jpg" alt="Balers"><figcaption>Balers</figcaption></figure>
-    <figure><img src="assets/eq-conveyors.jpg" alt="Conveyors"><figcaption>Conveyors</figcaption></figure>
+    <figure><img src="assets/eq2-balers.jpg" alt="Cardboard baler with a finished bale"><figcaption>Balers</figcaption></figure>
+    <figure><img src="assets/eq2-conveyors.jpg" alt="Inclined conveyor carrying paper"><figcaption>Conveyors</figcaption></figure>
   </div>
   <h2 style="margin-top:36px">Containers</h2>
   <p class="sub">From Gaylord boxes and collapsible containers to black bin receptacles and spotted trailers.</p>
   <div class="gallery">
-    <figure><img src="assets/eq-containers.jpg" alt="Containers"><figcaption>Containers</figcaption></figure>
-    <figure><img src="assets/eq-gaylord.jpg" alt="Gaylord box"><figcaption>Gaylord Box</figcaption></figure>
+    <figure><img src="assets/eq2-containers.jpg" alt="Stacked plastic tubs"><figcaption>Containers</figcaption></figure>
   </div>
+  <p class="credit">Baler photo: Walmart (CC BY 2.0, via Wikimedia Commons).</p>
   <p style="margin-top:28px"><a class="btn" href="contact.html">Ask about an equipment program</a></p>
 </div></section>
 """

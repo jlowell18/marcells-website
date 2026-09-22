@@ -31,9 +31,9 @@ jobs:
               [ -s "site/assets/$name" ] && { echo "fetched $name"; added=1; } || { echo "MISSING $name"; rm -f "site/assets/$name"; }
             fi
           done
-          # A missing photo must never break the page: fall back to the hero.
-          for f in eq-balers.jpg eq-conveyors.jpg eq-containers.jpg eq-gaylord.jpg; do
-            [ -s "site/assets/$f" ] || cp site/assets/hero.jpg "site/assets/$f" 2>/dev/null || true
+          # A missing equipment photo fails the deploy loudly (never silently substitute another image).
+          for f in eq2-balers.jpg eq2-conveyors.jpg eq2-containers.jpg; do
+            [ -s "site/assets/$f" ] || { echo "::error::$f did not download"; exit 1; }
           done
           if [ -n "$(git status --porcelain site/assets)" ]; then
             git config user.name "deploy"; git config user.email "actions@users.noreply.github.com"

@@ -54,3 +54,5 @@ footer.site ul{list-style:none;padding:0;margin:0}footer.site li{margin:4px 0}
 .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:18px}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding:36px 20px}.hero h1{font-size:32px}.cards,.quotes,.contact-grid{grid-template-columns:1fr}footer.site .wrap{grid-template-columns:1fr}
  .menu-btn{display:block}nav.main{display:none;width:100%}nav.main.open{display:block}nav.main ul{flex-direction:column}nav.main li.has-sub ul{position:static;display:block;border:0;box-shadow:none;padding-left:14px}header.site .wrap{flex-wrap:wrap}}
+
+.credit{font-size:12px;color:#888;margin-top:18px}

@@ -6,8 +6,7 @@ service-paper.jpg | https://img1.wsimg.com/isteam/ip/406653f7-77e9-486d-8485-342
 service-secure.webp | https://img1.wsimg.com/isteam/ip/406653f7-77e9-486d-8485-342cb5def842/service2.1.webp/:/cr=t:15.25%25,l:15.47%25,w:84.53%25,h:84.74%25/rs=w:900,cg:true,m
 service-newpaper.webp | https://img1.wsimg.com/isteam/ip/406653f7-77e9-486d-8485-342cb5def842/60GSM-Woodfree-Offset-Paper-Large-Size.webp/:/cr=t:10.72%25,l:4.97%25,w:89.29%25,h:67.13%25/rs=w:900,cg:true,m
 services-hero.jpg | https://img1.wsimg.com/isteam/stock/3526/:/cr=t:12.5%25,l:0%25,w:100%25,h:75%25/rs=w:1240,h:620,cg:true
-# Equipment page tiles — Unsplash stock (free for commercial use, no attribution required)
-eq-balers.jpg | https://images.unsplash.com/photo-1788734170194-043a8a994606?w=1200&q=75&fm=jpg&fit=crop
-eq-conveyors.jpg | https://images.unsplash.com/photo-1684695747561-9372850cf165?w=1200&q=75&fm=jpg&fit=crop
-eq-containers.jpg | https://images.unsplash.com/photo-1762120657938-fc30ecc9adf9?w=1200&q=75&fm=jpg&fit=crop
-eq-gaylord.jpg | https://images.unsplash.com/photo-1672552226380-486fe900b322?w=1200&q=75&fm=jpg&fit=crop
+# Equipment page tiles (eq2- = replaced 2026-09-22; new names so browsers drop the old cached copies)
+eq2-balers.jpg | https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Removing_box_bale_from_machine_in_Walmart_back_room.jpg&width=1280
+eq2-conveyors.jpg | https://upload.wikimedia.org/wikipedia/commons/a/ae/Material_recovery_facility_2004-03-24.jpg
+eq2-containers.jpg | https://images.pexels.com/photos/11703463/pexels-photo-11703463.jpeg?auto=compress&cs=tinysrgb&w=1200
