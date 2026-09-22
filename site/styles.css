@@ -283,3 +283,10 @@ header.site-h{padding:0}header.site-h .in{max-width:1140px;margin:0 auto;padding
 /* phone: inline grid styles on a few sections must yield */
 @media (max-width:900px){.svc,.gal,.charts,.isites,.icards,.covs,.values{grid-template-columns:1fr!important}.gal,.icards{grid-template-columns:1fr 1fr!important}
  .hero .wrap{padding-top:70px}.in{font-size:38px}.app-side a{font-size:12px;padding:7px 8px}body{overflow-x:hidden}}
+
+/* nav dropdown */
+nav.site-n .has-sub{position:relative}nav.site-n .has-sub .sub{display:none;position:absolute;top:100%;left:-10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px;min-width:190px;box-shadow:0 12px 30px rgba(0,0,0,.12);z-index:30;flex-direction:column}
+nav.site-n .has-sub:hover .sub,nav.site-n .has-sub:focus-within .sub{display:flex}nav.site-n .sub a{padding:8px 10px;border-radius:6px;font-weight:600}nav.site-n .sub a:hover{background:var(--paper)}
+.svc{grid-template-columns:repeat(5,1fr)}.svc a b{font-size:18px}.svc a span{font-size:13px}
+@media (max-width:900px){nav.site-n .has-sub{display:block}nav.site-n .has-sub .sub{display:flex;position:static;box-shadow:none;border:0;padding:0 0 0 14px;background:transparent}nav.site-n .has-sub>a{display:block}.svc{grid-template-columns:1fr!important}}
+@media (min-width:901px) and (max-width:1100px){.svc{grid-template-columns:repeat(3,1fr)}}

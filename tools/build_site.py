@@ -5,13 +5,23 @@ from content import PAGES
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "site")
 PHONE = "(773) 265-1200"; PHONE_TEL = "+17732651200"; FAX = "(773) 265-1220"
-EMAIL = "info@marcellspaper.com"; PORTAL = "https://portal.marcellspaper.com"
-NAV = [("Programs", "programs.html"), ("Equipment", "equipment.html"), ("Portal", "portal.html"), ("Paper", "paper.html"),
-       ("Metal", "metal.html"), ("Coverage", "coverage.html"), ("About", "about.html")]
+EMAIL = "info@marcellspaper.com"; PORTAL = "https://portals.cietrade.com/MarcellsPaperPortal/login.aspx"
+NAV = [("Programs", "programs.html"), ("Equipment", "equipment.html"), ("Portal", "portal.html"),
+       ("Materials", "paper.html", [("Paper", "paper.html"), ("Metal", "metal.html"), ("Plastics", "plastics.html"), ("Pallets", "pallets.html"), ("Secure destruction", "secure-destruction.html")]),
+       ("Coverage", "coverage.html"), ("About", "about.html")]
+MATERIAL_PAGES = {"paper.html", "metal.html", "plastics.html", "pallets.html", "secure-destruction.html"}
 
 def page(slug, title, desc, body):
     year = datetime.date.today().year
-    nav = "".join(('<a href="%s"%s>%s</a>' % (h, ' class="active"' if h == slug else '', l)) for l, h in NAV)
+    parts = []
+    for item in NAV:
+        l, h = item[0], item[1]
+        if len(item) > 2:
+            act = ' class="active"' if slug in MATERIAL_PAGES else ''
+            parts.append('<span class="has-sub"><a href="%s"%s>%s &#9662;</a><span class="sub">%s</span></span>' % (h, act, l, "".join('<a href="%s">%s</a>' % (sh, sl) for sl, sh in item[2])))
+        else:
+            parts.append('<a href="%s"%s>%s</a>' % (h, ' class="active"' if h == slug else '', l))
+    nav = "".join(parts)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -24,7 +34,7 @@ def page(slug, title, desc, body):
 <meta property="og:image" content="https://marcellspaper.com/assets/mpm2-hero.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.png">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 <div class="topbar"><div class="in"><span><b>Family-owned since 1979</b><span class="dot">·</span>Programs nationwide<span class="dot">·</span>Domestic &amp; export mills<span class="dot">·</span>Chicago, IL</span><span><b><a href="tel:{PHONE_TEL}">{PHONE}</a></b></span></div></div>
@@ -37,7 +47,7 @@ def page(slug, title, desc, body):
 <footer class="site-f"><div class="wrap"><div class="cols">
   <div><h4>Marcells Paper &amp; Metal Inc</h4><div class="phone"><a href="tel:{PHONE_TEL}">{PHONE}</a></div><p style="font-size:14px">4221 W Ferdinand St, Chicago, IL 60624<br>Fax {FAX} · <a href="mailto:{EMAIL}" style="display:inline">{EMAIL}</a></p></div>
   <div><h4>Programs</h4><a href="programs.html">How a program works</a><a href="equipment.html">Equipment</a><a href="portal.html">Portal</a><a href="coverage.html">Coverage</a></div>
-  <div><h4>Materials</h4><a href="paper.html">Paper</a><a href="metal.html">Metal</a><a href="secure-destruction.html">Secure destruction</a></div>
+  <div><h4>Materials</h4><a href="paper.html">Paper</a><a href="metal.html">Metal</a><a href="plastics.html">Plastics</a><a href="pallets.html">Pallets</a><a href="secure-destruction.html">Secure destruction</a></div>
   <div><h4>Company</h4><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="{PORTAL}" target="_blank" rel="noopener" style="color:#fff;font-weight:700">Client Login →</a></div>
 </div><div class="copy"><span>&copy; {year} Marcells Paper and Metal Inc · Chicago, IL</span><span>Family-owned since 1979</span></div></div></footer>
 </body>
