@@ -51,7 +51,7 @@ def page(slug, title, desc, body, current=None):
 </head>
 <body>
 <div class="topbar"><div class="wrap">
-  <span>Recycling paper &amp; metal in Chicago since the 1970s</span>
+  <span>Recycling paper &amp; metal in Chicago since 1979</span>
   <span><a href="tel:{PHONE_TEL}">{PHONE}</a> &nbsp;|&nbsp; <a href="mailto:{EMAIL}">{EMAIL}</a></span>
 </div></div>
 <header class="site"><div class="wrap">

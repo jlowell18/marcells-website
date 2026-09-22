@@ -32,7 +32,7 @@ jobs:
             fi
           done
           # A missing equipment photo fails the deploy loudly (never silently substitute another image).
-          for f in mpm-hero.jpg mpm-eq-baler.jpg mpm-eq-conveyor.jpg mpm-eq-tubs.jpg mpm-eq-gaylord.jpg; do
+          for f in mpm-hero.jpg mpm-eq-conveyor.jpg mpm-eq-tubs.jpg mpm-eq-gaylord.jpg; do
             [ -s "site/assets/$f" ] || { echo "::error::$f did not download"; exit 1; }
           done
           if [ -n "$(git status --porcelain site/assets)" ]; then

@@ -17,7 +17,7 @@ HOME = f"""
 <div class="hero"><div class="wrap">
   <div>
     <h1>Marcells Paper &amp; Metal</h1>
-    <p class="lead">Paper and metal recycling for Chicago-area printers, manufacturers and offices — pickup, containers, secure destruction and top-dollar pricing, all from one family-owned company since the 1970s.</p>
+    <p class="lead">Paper and metal recycling for Chicago-area printers, manufacturers and offices — pickup, containers, secure destruction and top-dollar pricing, all from one family-owned company since 1979.</p>
     <div class="cta"><a class="btn" href="contact.html">Request a quote</a><a class="btn ghost" href="services.html">Our services</a></div>
     <p style="margin-top:18px;color:var(--muted)"><strong>Address:</strong> 4221 W Ferdinand, Chicago, IL 60624 &nbsp;&middot;&nbsp; <strong>Phone:</strong> {PHONE_LINK} &nbsp;&middot;&nbsp; <strong>Fax:</strong> (773) 265-1220</p>
   </div>
@@ -74,7 +74,6 @@ EQUIPMENT = f"""
   <h2>Equipment</h2>
   <p class="sub">Sized to your tonnage, installed by us, supported for the life of the program.</p>
   <div class="gallery">
-    <figure><img src="assets/mpm-eq-baler.jpg" alt="Baler on the MPM floor"><figcaption>Balers</figcaption></figure>
     <figure><img src="assets/mpm-eq-conveyor.jpg" alt="Conveyor feeding shredded paper to the baler"><figcaption>Conveyors</figcaption></figure>
   </div>
   <h2 style="margin-top:36px">Containers</h2>
