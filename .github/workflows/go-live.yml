@@ -1,0 +1,59 @@
+# Switch marcellspaper.com from GoDaddy to the Cloudflare Pages site.
+# Runs when tools/GO_LIVE is pushed (Jared said "go live", 2026-09-22).
+# 1. Attach marcellspaper.com and www.marcellspaper.com to the Pages project.
+# 2. Save the current A records to the status branch (for rollback).
+# 3. Replace the two GoDaddy A records with a proxied CNAME to the Pages site;
+#    point www at the same. Every other record (mail, portal, DKIM...) is
+#    untouched - only records whose name is exactly the apex or www change.
+name: Go live
+on:
+  push:
+    paths: ["tools/GO_LIVE"]
+permissions:
+  contents: write
+jobs:
+  golive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Attach the domains to the Pages project
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          for d in marcellspaper.com www.marcellspaper.com; do
+            curl -sS -X POST "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/pages/projects/marcells-website/domains" \
+              -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json" -d "{\"name\":\"$d\"}" \
+              | python3 -c "import json,sys; d=json.load(sys.stdin); print('$d', 'attached' if d.get('success') else d.get('errors'))"
+          done
+      - name: Switch DNS (apex + www only)
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -e
+          j() { curl -sS "$@" -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json"; }
+          ZONE=$(j "https://api.cloudflare.com/client/v4/zones?name=marcellspaper.com" | python3 -c "import json,sys; print(json.load(sys.stdin)['result'][0]['id'])")
+          j "https://api.cloudflare.com/client/v4/zones/$ZONE/dns_records?per_page=200" > /tmp/all.json
+          python3 - <<'PY'
+          import json
+          d = json.load(open('/tmp/all.json'))['result']
+          keep = [r for r in d if r['name'] in ('marcellspaper.com','www.marcellspaper.com') and r['type'] in ('A','AAAA','CNAME')]
+          json.dump([{k: r[k] for k in ('id','type','name','content','proxied','ttl')} for r in keep], open('/tmp/before.json','w'), indent=1)
+          print('records that will change:'); [print(' ', r['type'], r['name'], '->', r['content']) for r in keep]
+          PY
+          # delete the apex A/AAAA/CNAME records and the www record
+          for id in $(python3 -c "import json; print(' '.join(r['id'] for r in json.load(open('/tmp/before.json'))))"); do
+            j -X DELETE "https://api.cloudflare.com/client/v4/zones/$ZONE/dns_records/$id" | python3 -c "import json,sys; print('deleted' if json.load(sys.stdin).get('success') else 'delete FAILED')"
+          done
+          for name in marcellspaper.com www.marcellspaper.com; do
+            j -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/dns_records" \
+              -d "{\"type\":\"CNAME\",\"name\":\"$name\",\"content\":\"marcells-website.pages.dev\",\"proxied\":true,\"ttl\":1}" \
+              | python3 -c "import json,sys; d=json.load(sys.stdin); print('$name', 'CNAME -> marcells-website.pages.dev' if d.get('success') else d.get('errors'))"
+          done
+          mkdir -p /tmp/out && cp /tmp/before.json /tmp/out/dns-before-golive.json
+          date -u +%FT%TZ > /tmp/out/went-live-at.txt
+      - name: Record what changed on the status branch (rollback info)
+        run: |
+          git config user.name "go-live"; git config user.email "actions@users.noreply.github.com"
+          git fetch origin status && git checkout status || git checkout -B status
+          cp /tmp/out/* . && git add -A && git commit -qm "went live $(date -u +%FT%TZ)" && git push origin status

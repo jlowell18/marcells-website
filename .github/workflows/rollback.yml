@@ -1,0 +1,29 @@
+# Put the GoDaddy A records back. Runs when tools/ROLLBACK is pushed.
+name: Rollback to GoDaddy
+on:
+  push:
+    paths: ["tools/ROLLBACK"]
+permissions:
+  contents: read
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: status }
+      - name: Restore the records saved at go-live
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -e
+          j() { curl -sS "$@" -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json"; }
+          ZONE=$(j "https://api.cloudflare.com/client/v4/zones?name=marcellspaper.com" | python3 -c "import json,sys; print(json.load(sys.stdin)['result'][0]['id'])")
+          j "https://api.cloudflare.com/client/v4/zones/$ZONE/dns_records?per_page=200" > /tmp/all.json
+          for id in $(python3 -c "import json; print(' '.join(r['id'] for r in json.load(open('/tmp/all.json'))['result'] if r['name'] in ('marcellspaper.com','www.marcellspaper.com') and r['type'] in ('A','AAAA','CNAME')))"); do
+            j -X DELETE "https://api.cloudflare.com/client/v4/zones/$ZONE/dns_records/$id" >/dev/null
+          done
+          python3 -c "
+          import json; rs=json.load(open('dns-before-golive.json'))
+          for r in rs: print(json.dumps({'type':r['type'],'name':r['name'],'content':r['content'],'proxied':r['proxied'],'ttl':1}))" | while read -r rec; do
+            j -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/dns_records" -d "$rec" | python3 -c "import json,sys; d=json.load(sys.stdin); print('restored' if d.get('success') else d.get('errors'))"
+          done
