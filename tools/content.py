@@ -74,7 +74,6 @@ EQUIPMENT = f"""
   <h2>Equipment</h2>
   <p class="sub">Sized to your tonnage, installed by us, supported for the life of the program.</p>
   <div class="gallery">
-    <figure><img src="assets/eq-air-systems.jpg" alt="Air systems"><figcaption>Air Systems</figcaption></figure>
     <figure><img src="assets/eq-balers.jpg" alt="Balers"><figcaption>Balers</figcaption></figure>
     <figure><img src="assets/eq-conveyors.jpg" alt="Conveyors"><figcaption>Conveyors</figcaption></figure>
   </div>
@@ -224,7 +223,7 @@ FAQ = '<section><div class="wrap"><div class="prose"><h1>Frequently Asked Questi
 PAGES = {
     "index": {"title": "Marcells Paper & Metal | Paper & Metal Recycling, Chicago IL", "desc": "Marcells Paper & Metal offers efficient paper and metal recovery services in Chicago — pickup, containers, secure document destruction and top-dollar pricing. Call (773) 265-1200.", "body": HOME},
     "about": {"title": "About Us | Marcells Paper & Metal", "desc": "How Scott Lowell turned a trunk full of computer punch cards into Marcells Paper & Metal, Chicago's family-owned paper and metal recycling center.", "h1": "Marcells Paper and Metal", "blocks": ABOUT},
-    "equipment": {"title": "Recycling Equipment | Marcells Paper & Metal", "desc": "Balers, air systems, conveyors and containers sized to your tonnage — with financing, installation, waste removal and ongoing support from Marcells Paper & Metal.", "body": EQUIPMENT},
+    "equipment": {"title": "Recycling Equipment | Marcells Paper & Metal", "desc": "Balers, conveyors and containers sized to your tonnage — with financing, installation, waste removal and ongoing support from Marcells Paper & Metal.", "body": EQUIPMENT},
     "services": {"title": "Recycling Services | Marcells Paper & Metal", "desc": "Paper and metal waste collection, recycling, secure document shredding, brokerage and customer service from Marcells Paper & Metal in Chicago.", "body": SERVICES},
     "metal-waste-collection": {"title": "Metal Waste Collection | Marcells Paper & Metal", "desc": "Metal waste collection and removal in Chicago, IL — aluminum plates, pans and more, with containers dropped at your door and same-day pickup.", "h1": "Metal Waste Collection and Removal", "blocks": METAL_WASTE},
     "paper-waste-collection": {"title": "Paper Waste Collection | Marcells Paper & Metal", "desc": "Paper waste collection and removal in Chicago, IL — old inventory, sheets, rolls and used paper, containers supplied, fast pickup.", "h1": "Beyond Metal Recycling: We Can Also Collect and Remove Your Paper Waste!", "blocks": PAPER_WASTE},

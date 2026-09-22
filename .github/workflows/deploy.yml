@@ -32,7 +32,7 @@ jobs:
             fi
           done
           # A missing photo must never break the page: fall back to the hero.
-          for f in eq-air-systems.jpg eq-balers.jpg eq-conveyors.jpg eq-containers.jpg eq-gaylord.jpg; do
+          for f in eq-balers.jpg eq-conveyors.jpg eq-containers.jpg eq-gaylord.jpg; do
             [ -s "site/assets/$f" ] || cp site/assets/hero.jpg "site/assets/$f" 2>/dev/null || true
           done
           if [ -n "$(git status --porcelain site/assets)" ]; then
