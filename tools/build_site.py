@@ -44,7 +44,7 @@ def page(slug, title, desc, body, current=None):
 <meta name="description" content="{html.escape(desc)}">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
-<meta property="og:image" content="https://marcellspaper.com/assets/hero.jpg">
+<meta property="og:image" content="https://marcellspaper.com/assets/mpm-hero.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="styles.css">

@@ -3,12 +3,12 @@
 # Images: filenames under site/assets/ (see tools/import-images workflow).
 
 IMAGES = {
-    "hero": "assets/hero.jpg",
+    "hero": "assets/mpm-hero.jpg",
     "logo": "assets/logo.webp",
-    "svc_paper": "assets/service-paper.jpg",
-    "svc_secure": "assets/service-secure.webp",
-    "svc_newpaper": "assets/service-newpaper.webp",
-    "services_hero": "assets/services-hero.jpg",
+    "svc_paper": "assets/mpm-svc-paper.jpg",
+    "svc_secure": "assets/mpm-svc-secure.jpg",
+    "svc_newpaper": "assets/mpm-svc-newpaper.jpg",
+    "services_hero": "assets/mpm-services-hero.jpg",
 }
 
 PHONE_LINK = '<a href="tel:+17732651200">(773) 265-1200</a>'
@@ -21,24 +21,24 @@ HOME = f"""
     <div class="cta"><a class="btn" href="contact.html">Request a quote</a><a class="btn ghost" href="services.html">Our services</a></div>
     <p style="margin-top:18px;color:var(--muted)"><strong>Address:</strong> 4221 W Ferdinand, Chicago, IL 60624 &nbsp;&middot;&nbsp; <strong>Phone:</strong> {PHONE_LINK} &nbsp;&middot;&nbsp; <strong>Fax:</strong> (773) 265-1220</p>
   </div>
-  <img src="{IMAGES['hero']}" alt="Recycled paper and green recycling arrows">
+  <img src="{IMAGES['hero']}" alt="Bales of recycled paper on the MPM warehouse floor">
 </div></div>
 
 <section><div class="wrap">
   <h2>Paper and Metal Recycling Solutions You May Need</h2>
   <p class="sub">Three things we do every day for hundreds of Chicago-area businesses.</p>
   <div class="cards">
-    <div class="card"><img src="{IMAGES['svc_paper']}" alt="Paper and metal waste moving on a belt">
+    <div class="card"><img src="{IMAGES['svc_paper']}" alt="Bales of shredded paper at MPM">
       <div class="body"><h3>Paper Recycling &amp; Waste Removal</h3>
       <p>MPM excels at assisting clients with smooth and efficient fulfillment and paper waste removal and recycling. We work with a broad spectrum of paper grades from newspaper and corrugated to high grade and pulp. Our direct relationships with the paper mills allow us to work on our clients' best behalf and generate top value for your paper waste.</p>
       <p><strong>Please call us for a free consultation and quote. No job is too big!</strong></p>
       <a class="more" href="paper-recycling.html">Paper recycling &rarr;</a></div></div>
-    <div class="card"><img src="{IMAGES['svc_secure']}" alt="Privacy and secure document destruction">
+    <div class="card"><img src="{IMAGES['svc_secure']}" alt="Shredded documents coming off the conveyor at MPM">
       <div class="body"><h3>Secure Document Destruction</h3>
       <p>MPM understands that the secure destruction of sensitive documents and files is a serious business. That is why we added a special site at our facility dedicated to that process. We offer pick-up services to collect your documents and provide the secure destruction of those files. Our document destruction site is isolated specifically and solely for this purpose.</p>
       <p><strong>24 hour video surveillance with remote viewing access.</strong></p>
       <a class="more" href="services.html">All services &rarr;</a></div></div>
-    <div class="card"><img src="{IMAGES['svc_newpaper']}" alt="New paper stock in sheets and rolls">
+    <div class="card"><img src="{IMAGES['svc_newpaper']}" alt="Paper rolls in stock at MPM">
       <div class="body"><h3>New Paper &amp; Metal Recycling</h3>
       <p>MPM maintains a vast inventory of NEW &amp; JOB LOT paper in cut sheets and rolls from 30pt to 24pt CS2. Stock is available to printers at significant savings. In-stock items vary, so give us a call to inquire about what we currently have.</p>
       <p>We also specialize in metal recycling — aluminum plates, mixed metals and more — with the equipment to strip, load and haul bulky items.</p>
@@ -74,22 +74,24 @@ EQUIPMENT = f"""
   <h2>Equipment</h2>
   <p class="sub">Sized to your tonnage, installed by us, supported for the life of the program.</p>
   <div class="gallery">
-    <figure><img src="assets/eq2-balers.jpg" alt="Cardboard baler with a finished bale"><figcaption>Balers</figcaption></figure>
-    <figure><img src="assets/eq2-conveyors.jpg" alt="Inclined conveyor carrying paper"><figcaption>Conveyors</figcaption></figure>
+    <figure><img src="assets/mpm-eq-baler.jpg" alt="Baler on the MPM floor"><figcaption>Balers</figcaption></figure>
+    <figure><img src="assets/mpm-eq-conveyor.jpg" alt="Conveyor feeding shredded paper to the baler"><figcaption>Conveyors</figcaption></figure>
   </div>
   <h2 style="margin-top:36px">Containers</h2>
   <p class="sub">From Gaylord boxes and collapsible containers to black bin receptacles and spotted trailers.</p>
   <div class="gallery">
-    <figure><img src="assets/eq2-containers.jpg" alt="Stacked plastic tubs"><figcaption>Containers</figcaption></figure>
+    <figure><img src="assets/mpm-eq-tubs.jpg" alt="MPM plastic tubs"><figcaption>Plastic Tubs</figcaption></figure>
+    <figure><img src="assets/mpm-eq-collapsible.jpg" alt="Collapsible bulk containers"><figcaption>Collapsible Containers</figcaption></figure>
+    <figure><img src="assets/mpm-eq-bins.jpg" alt="Black bin receptacles"><figcaption>Bin Receptacles</figcaption></figure>
+    <figure><img src="assets/mpm-eq-gaylord.jpg" alt="Gaylord box on a pallet"><figcaption>Gaylord Box</figcaption></figure>
   </div>
-  <p class="credit">Baler photo: Walmart (CC BY 2.0, via Wikimedia Commons).</p>
   <p style="margin-top:28px"><a class="btn" href="contact.html">Ask about an equipment program</a></p>
 </div></section>
 """
 
 SERVICES = f"""
 <section><div class="wrap">
-  <img src="{IMAGES['services_hero']}" alt="Recycle icon on a wooden board on the grass" style="border-radius:14px;width:100%;max-height:380px;object-fit:cover">
+  <img src="{IMAGES['services_hero']}" alt="Aisle of finished bales in the MPM warehouse" style="border-radius:14px;width:100%;max-height:380px;object-fit:cover">
   <div class="prose" style="margin-top:28px">
   <h1>Services</h1>
   <h3>At MPM, superior customer service is the name of the game.</h3>
