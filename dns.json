@@ -1,0 +1,68 @@
+[
+ {
+  "type": "A",
+  "name": "marcellspaper.com",
+  "content": "13.248.243.5",
+  "proxied": true
+ },
+ {
+  "type": "A",
+  "name": "marcellspaper.com",
+  "content": "76.223.105.230",
+  "proxied": true
+ },
+ {
+  "type": "CNAME",
+  "name": "autodiscover.marcellspaper.com",
+  "content": "autodiscover.outlook.com",
+  "proxied": true
+ },
+ {
+  "type": "CNAME",
+  "name": "_domainconnect.marcellspaper.com",
+  "content": "_domainconnect.gd.domaincontrol.com",
+  "proxied": true
+ },
+ {
+  "type": "CNAME",
+  "name": "ftp.marcellspaper.com",
+  "content": "marcellspaper.com",
+  "proxied": true
+ },
+ {
+  "type": "CNAME",
+  "name": "lyncdiscover.marcellspaper.com",
+  "content": "lyncdiscover.mex09.emailsrvr.com",
+  "proxied": true
+ },
+ {
+  "type": "CNAME",
+  "name": "portal.marcellspaper.com",
+  "content": "b449b5c0-63ce-4d25-a218-0583d123c15e.cfargotunnel.com",
+  "proxied": true
+ },
+ {
+  "type": "CNAME",
+  "name": "selector1._domainkey.marcellspaper.com",
+  "content": "selector1-marcellspaper-com._domainkey.marcellspaper.w-v1.dk",
+  "proxied": false
+ },
+ {
+  "type": "CNAME",
+  "name": "selector2._domainkey.marcellspaper.com",
+  "content": "selector2-marcellspaper-com._domainkey.marcellspaper.w-v1.dk",
+  "proxied": false
+ },
+ {
+  "type": "CNAME",
+  "name": "sip.marcellspaper.com",
+  "content": "sip.mex09.emailsrvr.com",
+  "proxied": true
+ },
+ {
+  "type": "CNAME",
+  "name": "www.marcellspaper.com",
+  "content": "marcellspaper.com",
+  "proxied": true
+ }
+]
