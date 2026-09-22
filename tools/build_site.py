@@ -34,7 +34,7 @@ def page(slug, title, desc, body):
 <meta property="og:image" content="https://marcellspaper.com/assets/mpm2-hero.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.png">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <div class="topbar"><div class="in"><span><b>Family-owned since 1979</b><span class="dot">·</span>Programs nationwide<span class="dot">·</span>Domestic &amp; export mills<span class="dot">·</span>Chicago, IL</span><span><b><a href="tel:{PHONE_TEL}">{PHONE}</a></b></span></div></div>
