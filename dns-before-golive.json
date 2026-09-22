@@ -1,0 +1,26 @@
+[
+ {
+  "id": "a3c62c0753494afd977cf7f044ab9d61",
+  "type": "A",
+  "name": "marcellspaper.com",
+  "content": "13.248.243.5",
+  "proxied": true,
+  "ttl": 1
+ },
+ {
+  "id": "949d6aef4f1fd081d8c541a0d2b9370c",
+  "type": "A",
+  "name": "marcellspaper.com",
+  "content": "76.223.105.230",
+  "proxied": true,
+  "ttl": 1
+ },
+ {
+  "id": "350ea9d9f102875fd49979742fc58dd7",
+  "type": "CNAME",
+  "name": "www.marcellspaper.com",
+  "content": "marcellspaper.com",
+  "proxied": true,
+  "ttl": 1
+ }
+]
