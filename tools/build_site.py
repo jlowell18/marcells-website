@@ -35,11 +35,11 @@ def page(slug, title, desc, body):
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
-<div class="topbar"><div class="in"><span><b>Family-owned since 1979</b><span class="dot">·</span>Programs nationwide<span class="dot">·</span>Domestic &amp; export mills<span class="dot">·</span>Chicago, IL</span><span><b><a href="tel:{PHONE_TEL}">{PHONE}</a></b></span></div></div>
-<header class="site-h"><div class="in">
+<div class="topbar"><div class="hin"><span><b>Family-owned since 1979</b><span class="dot">·</span>Programs nationwide<span class="dot">·</span>Domestic &amp; export mills<span class="dot">·</span>Chicago, IL</span><span><b><a href="tel:{PHONE_TEL}">{PHONE}</a></b></span></div></div>
+<header class="site-h"><div class="hin">
   <a class="brand" href="index.html"><img src="assets/logo.webp" alt="Marcells Paper &amp; Metal"></a>
   <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav.site-n').classList.toggle('open')">&#9776;</button>
   <nav class="site-n">{nav}<a class="login" href="{PORTAL}" target="_blank" rel="noopener">Client Login</a><a class="cta" href="contact.html">Request a quote</a></nav>
