@@ -6,7 +6,7 @@ from content import PAGES
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "site")
 PHONE = "(773) 265-1200"; PHONE_TEL = "+17732651200"; FAX = "(773) 265-1220"
 EMAIL = "info@marcellspaper.com"; PORTAL = "https://portals.cietrade.com/MarcellsPaperPortal/login.aspx"
-NAV = [("Programs", "programs.html"), ("Equipment", "equipment.html"), ("Portal", "portal.html"),
+NAV = [("Services", "services.html"), ("Equipment", "equipment.html"), ("Portal", "portal.html"),
        ("Materials", "paper.html", [("Paper", "paper.html"), ("Metal", "metal.html"), ("Plastics", "plastics.html"), ("Pallets", "pallets.html"), ("Secure destruction", "secure-destruction.html")]),
        ("Coverage", "coverage.html"), ("About", "about.html")]
 MATERIAL_PAGES = {"paper.html", "metal.html", "plastics.html", "pallets.html", "secure-destruction.html"}
@@ -31,24 +31,25 @@ def page(slug, title, desc, body):
 <meta name="description" content="{html.escape(desc)}">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
-<meta property="og:image" content="https://marcellspaper.com/assets/mpm2-hero.jpg">
+<meta property="og:image" content="https://marcellspaper.com/assets/mpm2-bales.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.png">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 <div class="topbar"><div class="in"><span><b>Family-owned since 1979</b><span class="dot">·</span>Programs nationwide<span class="dot">·</span>Domestic &amp; export mills<span class="dot">·</span>Chicago, IL</span><span><b><a href="tel:{PHONE_TEL}">{PHONE}</a></b></span></div></div>
 <header class="site-h"><div class="in">
   <a class="brand" href="index.html"><img src="assets/logo.webp" alt="Marcells Paper &amp; Metal"></a>
   <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav.site-n').classList.toggle('open')">&#9776;</button>
-  <nav class="site-n">{nav}<a class="login" href="{PORTAL}" target="_blank" rel="noopener">Client Login</a><a class="cta" href="contact.html">Talk to us</a></nav>
+  <nav class="site-n">{nav}<a class="login" href="{PORTAL}" target="_blank" rel="noopener">Client Login</a><a class="cta" href="contact.html">Request a quote</a></nav>
 </div></header>
 {body}
 <footer class="site-f"><div class="wrap"><div class="cols">
   <div><h4>Marcells Paper &amp; Metal Inc</h4><div class="phone"><a href="tel:{PHONE_TEL}">{PHONE}</a></div><p style="font-size:14px">4221 W Ferdinand St, Chicago, IL 60624<br>Fax {FAX} · <a href="mailto:{EMAIL}" style="display:inline">{EMAIL}</a></p></div>
-  <div><h4>Programs</h4><a href="programs.html">How a program works</a><a href="equipment.html">Equipment</a><a href="portal.html">Portal</a><a href="coverage.html">Coverage</a></div>
+  <div><h4>Company</h4><a href="services.html">Services</a><a href="equipment.html">Equipment</a><a href="portal.html">Portal</a><a href="coverage.html">Coverage</a></div>
   <div><h4>Materials</h4><a href="paper.html">Paper</a><a href="metal.html">Metal</a><a href="plastics.html">Plastics</a><a href="pallets.html">Pallets</a><a href="secure-destruction.html">Secure destruction</a></div>
-  <div><h4>Company</h4><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="{PORTAL}" target="_blank" rel="noopener" style="color:#fff;font-weight:700">Client Login →</a></div>
+  <div><h4>More</h4><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="{PORTAL}" target="_blank" rel="noopener" style="color:#fff;font-weight:700">Client Login →</a></div>
 </div><div class="copy"><span>&copy; {year} Marcells Paper and Metal Inc · Chicago, IL</span><span>Family-owned since 1979</span></div></div></footer>
 </body>
 </html>
@@ -64,7 +65,7 @@ def build():
     with open(os.path.join(ROOT, "_redirects"), "w") as f:
         f.write("\n".join([
             "/about-1 /about 301", "/about-1/ /about 301", "/index / 301",
-            "/services /programs 301", "/services.html /programs 301",
+            "/programs /services 301", "/programs.html /services 301",
             "/metal-waste-collection /metal 301", "/metal-waste-collection.html /metal 301",
             "/metal-recycling /metal 301", "/metal-recycling.html /metal 301",
             "/paper-waste-collection /paper 301", "/paper-waste-collection.html /paper 301",
