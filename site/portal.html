@@ -20,137 +20,24 @@
   <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav.site-n').classList.toggle('open')">&#9776;</button>
   <nav class="site-n"><a href="services.html">Services</a><a href="equipment.html">Equipment</a><a href="portal.html" class="active">Portal</a><span class="has-sub"><a href="paper.html">Materials &#9662;</a><span class="sub"><a href="paper.html">Paper</a><a href="metal.html">Metal</a><a href="plastics.html">Plastics</a><a href="pallets.html">Pallets</a><a href="secure-destruction.html">Secure destruction</a></span></span><a href="coverage.html">Coverage</a><a href="about.html">About</a><a class="login" href="https://portals.cietrade.com/MarcellsPaperPortal/login.aspx" target="_blank" rel="noopener">Client Login</a><a class="cta" href="contact.html">Request a quote</a></nav>
 </div></header>
-<div class="head-g"><div class="wrap"><div class="pre">The portal</div><h1>Your program, visible.</h1><p class="lead">Every customer gets a login. Pricing, loads, statements, payments and impact — updated as loads ship, not assembled when you ask.</p><div class="ul-links"><a href="https://portals.cietrade.com/MarcellsPaperPortal/login.aspx" target="_blank" rel="noopener">Client Login</a><a href="contact.html">Ask for a walkthrough</a></div></div><div class="tear" aria-hidden="true"><svg viewBox="0 0 1200 28" preserveAspectRatio="none"><path d="M0 14 L38 6 L71 18 L113 4 L152 16 L190 8 L236 20 L271 6 L318 17 L352 3 L399 15 L441 9 L482 21 L530 7 L563 18 L611 5 L648 16 L690 10 L734 22 L779 6 L812 15 L861 3 L903 18 L942 8 L988 19 L1032 6 L1071 16 L1118 4 L1160 17 L1200 9 L1200 28 L0 28 Z"/></svg></div></div><div class="pdark-wrap"><div class="wrap" style="position:relative;z-index:2">
-  <div class="app">
-   <div class="app-chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">MPM customer portal</span><span class="live"><i></i>Live · updated as loads ship</span></div>
-   <div class="app-body">
-    <aside class="app-side">
-      <div class="who"><b>Your company</b><span>All sites ▾</span></div>
-      <a href="#" class="on" data-t="overview">Overview</a><a href="#" data-t="pricing">Pricing</a><a href="#" data-t="loads">Loads</a><a href="#" data-t="statements">Statements</a><a href="#" data-t="payments">Payments</a><a href="#" data-t="impact">Impact</a><a href="#" data-t="bols">Documents</a>
-      <div class="side-foot">Sample data — illustrative.<br>Real figures shown to logged-in customers only.</div>
-    </aside>
-    <main class="app-main">
-     <div class="app-top"><b id="app-title">Overview</b><span>September 2026 &nbsp;·&nbsp; 3 sites</span></div>
-
-     <div class="tpanel on" data-t="overview">
-      <div class="kpis">
-        <div><span>Loads this month</span><b>14</b><em>+3 vs Aug</em></div>
-        <div><span>Net tons</span><b>268.4</b><em>+11%</em></div>
-        <div><span>Value this month</span><b class="blur">$48,210</b><em class="blur">+$4,100</em></div>
-        <div><span>Next payment</span><b>Sep 30</b><em>ACH · scheduled</em></div>
-      </div>
-      <div class="charts">
-        <div class="chart"><div class="ch">Tons shipped by month</div><div class="cv"><canvas id="c-tons"></canvas></div></div>
-        <div class="chart"><div class="ch">Your price vs. published index — OCC</div><div class="cv"><canvas id="c-price"></canvas></div><div class="cf">Axis hidden on the public site. Your login shows the numbers.</div></div>
-      </div>
-      <div class="recent"><div class="ch">Recent activity</div>
-        <div class="act"><span class="pill g">Paid</span><span>ACH cleared for August statement, Site 07</span><em>Sep 15</em></div>
-        <div class="act"><span class="pill b">Shipped</span><span>Ticket 51 633 · SOP · 38,760 lb · Site 12</span><em>Sep 19</em></div>
-        <div class="act"><span class="pill b">Shipped</span><span>Ticket 51 641 · Mixed · 40,010 lb · Site 03</span><em>Sep 22</em></div>
-        <div class="act"><span class="pill k">Scheduled</span><span>OCC pickup · Site 07 · trailer spotted</span><em>Sep 24</em></div>
-      </div>
-     </div>
-
-     <div class="tpanel" data-t="pricing">
-      <div class="phead"><h3>Current pricing by grade</h3><span>Per net ton · updated monthly</span></div>
-      <table class="tbl"><tr><th>Grade</th><th>Basis</th><th class="r">Sept price</th><th class="r">vs Aug</th><th class="r">Trend</th></tr>
-      <tr><td><b>OCC</b></td><td>Index-linked</td><td class="r blur">$118.00</td><td class="r up">▲ <span class="blur">$6</span></td><td class="r"><span class="spark s1"></span></td></tr>
-      <tr><td><b>SOP</b></td><td>Index-linked</td><td class="r blur">$212.00</td><td class="r up">▲ <span class="blur">$4</span></td><td class="r"><span class="spark s2"></span></td></tr>
-      <tr><td><b>Mixed paper</b></td><td>Index-linked</td><td class="r blur">$62.00</td><td class="r dn">▼ <span class="blur">$2</span></td><td class="r"><span class="spark s3"></span></td></tr>
-      <tr><td><b>DLK</b></td><td>Index-linked</td><td class="r blur">$154.00</td><td class="r">—</td><td class="r"><span class="spark s1"></span></td></tr>
-      <tr><td><b>Hard white</b></td><td>Index-linked</td><td class="r blur">$390.00</td><td class="r up">▲ <span class="blur">$10</span></td><td class="r"><span class="spark s2"></span></td></tr></table>
-     </div>
-
-     <div class="tpanel" data-t="loads">
-      <div class="phead"><h3>Loads — all sites</h3><span><span class="chip">Sept 2026</span><span class="chip">All grades</span><span class="chip">Export CSV ↓</span></span></div>
-      <table class="tbl"><tr><th>Date</th><th>Ticket</th><th>Site</th><th>Grade</th><th class="r">Net lb</th><th class="r">Value</th><th class="r">Status</th></tr>
-      <tr><td>09/18</td><td>51 628</td><td>07</td><td>OCC</td><td class="r">42,340</td><td class="r blur">$2,498</td><td class="r"><span class="pill g">Paid</span></td></tr>
-      <tr><td>09/19</td><td>51 633</td><td>12</td><td>SOP</td><td class="r">38,760</td><td class="r blur">$4,109</td><td class="r"><span class="pill b">Shipped</span></td></tr>
-      <tr><td>09/22</td><td>51 641</td><td>03</td><td>Mixed</td><td class="r">40,010</td><td class="r blur">$1,240</td><td class="r"><span class="pill b">Shipped</span></td></tr>
-      <tr><td>09/22</td><td>51 644</td><td>07</td><td>OCC</td><td class="r">44,120</td><td class="r blur">$2,603</td><td class="r"><span class="pill b">Shipped</span></td></tr>
-      <tr><td>09/24</td><td>—</td><td>07</td><td>OCC</td><td class="r">—</td><td class="r">—</td><td class="r"><span class="pill k">Scheduled</span></td></tr>
-      <tr><td>09/26</td><td>—</td><td>12</td><td>SOP</td><td class="r">—</td><td class="r">—</td><td class="r"><span class="pill k">Scheduled</span></td></tr></table>
-     </div>
-
-     <div class="tpanel" data-t="statements">
-      <div class="phead"><h3>Statements</h3><span>One per site, per month · PDF</span></div>
-      <div class="stg">
-        <div class="stc"><b>Site 07</b><span>Aug 2026</span><div class="row"><span>Loads (11)</span><i class="blur">$31,840</i></div><div class="row"><span>Payments</span><i class="blur">–$28,560</i></div><div class="row tot"><span>Balance</span><i class="blur">$12,490</i></div><a>Download PDF ↓</a></div>
-        <div class="stc"><b>Site 12</b><span>Aug 2026</span><div class="row"><span>Loads (9)</span><i class="blur">$24,110</i></div><div class="row"><span>Payments</span><i class="blur">–$24,110</i></div><div class="row tot"><span>Balance</span><i class="blur">$0</i></div><a>Download PDF ↓</a></div>
-        <div class="stc"><b>Site 03</b><span>Aug 2026</span><div class="row"><span>Loads (6)</span><i class="blur">$9,870</i></div><div class="row"><span>Payments</span><i class="blur">–$6,200</i></div><div class="row tot"><span>Balance</span><i class="blur">$3,670</i></div><a>Download PDF ↓</a></div>
-      </div>
-     </div>
-
-     <div class="tpanel" data-t="payments">
-      <div class="phead"><h3>Payments</h3><span>Last 60 days</span></div>
-      <table class="tbl"><tr><th>Date</th><th>Reference</th><th>Covers</th><th class="r">Amount</th><th class="r">Status</th></tr>
-      <tr><td>09/15</td><td>ACH 2026-0915</td><td>Aug statement · Site 07</td><td class="r blur">$14,220</td><td class="r"><span class="pill g">Cleared</span></td></tr>
-      <tr><td>08/30</td><td>ACH 2026-0830</td><td>Jul statement · Site 12</td><td class="r blur">$11,980</td><td class="r"><span class="pill g">Cleared</span></td></tr>
-      <tr><td>09/30</td><td>Scheduled</td><td>Aug statement · Site 03</td><td class="r blur">$3,670</td><td class="r"><span class="pill k">Upcoming</span></td></tr></table>
-     </div>
-
-     <div class="tpanel" data-t="impact">
-      <div class="phead"><h3>Recycling impact — year to date</h3><span><span class="chip">All sites</span><span class="chip">2026 YTD ▾</span><span class="chip">Export for ESG ↓</span></span></div>
-      <div class="ibanner"><img src="assets/mpm2-impact_trees.jpg" alt=""><div class="ish"></div>
-        <div class="ib"><div class="ie">What 3,184 tons of recovered paper did this year</div><div class="in">54,100 <small>trees</small></div><div class="it">left standing — the equivalent of about <b>135 acres</b> of forest, or 68 Chicago city blocks of canopy.</div></div>
-        <div class="ilive"><i></i>Updated as loads ship</div>
-      </div>
-      <div class="icards">
-        <div class="ic"><img src="assets/mpm2-impact_water.jpg" alt=""><div class="ish"></div><div class="ib"><div class="in">22.3M <small>gal</small></div><div class="il">water saved</div><div class="it">≈ 34 Olympic pools</div></div></div>
-        <div class="ic"><img src="assets/mpm2-impact_air.jpg" alt=""><div class="ish"></div><div class="ib"><div class="in">9,870 <small>t</small></div><div class="il">CO₂e avoided</div><div class="it">≈ 2,150 cars off the road for a year</div></div></div>
-        <div class="ic"><img src="assets/mpm2-impact_energy.jpg" alt=""><div class="ish"></div><div class="ib"><div class="in">12.9M <small>kWh</small></div><div class="il">energy saved</div><div class="it">≈ 1,200 homes powered for a year</div></div></div>
-        <div class="ic"><img src="assets/mpm2-impact_landfill.jpg" alt=""><div class="ish"></div><div class="ib"><div class="in">9,550 <small>yd³</small></div><div class="il">landfill space avoided</div><div class="it">≈ 3 football fields, 6 ft deep</div></div></div>
-      </div>
-      <div class="charts" style="margin-top:12px;grid-template-columns:1.4fr 1fr">
-        <div class="chart"><div class="ch">Tons diverted by month — and what they added up to</div><div class="cv" style="height:170px"><canvas id="c-impact"></canvas></div></div>
-        <div class="chart"><div class="ch">Diversion by grade</div><div class="cv" style="height:170px"><canvas id="c-grade"></canvas></div></div>
-      </div>
-      <div class="isites">
-        <div><b>Site 07</b><span>1,410 t</span><i style="width:44%"></i></div>
-        <div><b>Site 12</b><span>1,120 t</span><i style="width:35%"></i></div>
-        <div><b>Site 03</b><span>654 t</span><i style="width:21%"></i></div>
-        <div class="ix">Per-site breakdown exports as a one-page PDF your sustainability team can attach to corporate reporting. Equivalents use published EPA WARM factors. <em>Sample data — illustrative.</em></div>
-      </div>
-     </div>
-
-     <div class="tpanel" data-t="bols">
-      <div class="phead"><h3>Documents</h3><span>MPM bill of lading and scale ticket for every load</span></div>
-      <table class="tbl"><tr><th>Ticket</th><th>Date</th><th>Site</th><th>Grade</th><th class="r">Net lb</th><th class="r">Document</th></tr>
-      <tr><td>51 628</td><td>09/18</td><td>07</td><td>OCC</td><td class="r">42,340</td><td class="r"><a class="lnk">MPM BOL ↓</a></td></tr>
-      <tr><td>51 633</td><td>09/19</td><td>12</td><td>SOP</td><td class="r">38,760</td><td class="r"><a class="lnk">MPM BOL ↓</a></td></tr>
-      <tr><td>51 641</td><td>09/22</td><td>03</td><td>Mixed</td><td class="r">40,010</td><td class="r"><a class="lnk">Scale ticket ↓</a></td></tr></table>
-     </div>
-    </main>
-   </div>
-  </div>
- </div>
-</div>
-
+<div class="head-g"><div class="wrap"><div class="pre">The portal</div><h1>Your program, visible.</h1>
+<p class="lead">Every customer gets a login. Pricing, loads, statements, payments and impact — updated as loads ship, not assembled when you ask.</p>
+<div class="ul-links"><a href="https://portals.cietrade.com/MarcellsPaperPortal/login.aspx" target="_blank" rel="noopener">Client Login</a><a href="contact.html">Ask for a walkthrough</a></div></div><div class="tear" aria-hidden="true"><svg viewBox="0 0 1200 28" preserveAspectRatio="none"><path d="M0 14 L38 6 L71 18 L113 4 L152 16 L190 8 L236 20 L271 6 L318 17 L352 3 L399 15 L441 9 L482 21 L530 7 L563 18 L611 5 L648 16 L690 10 L734 22 L779 6 L812 15 L861 3 L903 18 L942 8 L988 19 L1032 6 L1071 16 L1118 4 L1160 17 L1200 9 L1200 28 L0 28 Z"/></svg></div></div>
 <section><div class="wrap">
   <div class="grid3">
-    <div><h3 class="lab">Not a monthly PDF you have to ask for.</h3><p>Every load posts to your login when it crosses our scale. Status moves from scheduled to shipped to paid without a phone call.</p></div>
-    <div><h3 class="lab">Statements that drop into your close.</h3><p>One statement per site with a running balance, downloadable as a PDF. Payments tie back to the statement they cover.</p></div>
-    <div><h3 class="lab">Impact numbers your sustainability team can use.</h3><p>Tons, trees, water and CO₂e by site and month, exported in a format that goes straight into corporate reporting.</p></div>
+    <div><h3 class="lab">Pricing</h3><p>Your current price on every grade, in one place, with the basis it rides on. No calling to ask what you're getting.</p></div>
+    <div><h3 class="lab">Loads</h3><p>Every load with date, ticket number, grade, net weight and value — from scheduled through shipped to paid — filtered by site, month or grade.</p></div>
+    <div><h3 class="lab">Statements</h3><p>A monthly statement per site, downloadable as a PDF, with a running balance that ties to your payments.</p></div>
+    <div><h3 class="lab">Payments</h3><p>What's been paid and what's coming, with dates and the loads each payment covers. No chasing accounts payable.</p></div>
+    <div><h3 class="lab">Environmental Impact</h3><p>Tons recycled, trees, water, energy and CO₂e by site and month — exportable for your own sustainability reporting.</p></div>
+    <div><h3 class="lab">Documents</h3><p>The Marcells scale ticket and bill of lading for every load, available to open or download the moment it's weighed.</p></div>
   </div>
-  <p class="muted" style="margin-top:36px;font-size:13px">All figures above are sample data for illustration. Dollar values are shown only to logged-in customers.</p>
 </div></section>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
-<script>
-// portal side tabs
-const sideLinks=[...document.querySelectorAll('.app-side a')];
-sideLinks.forEach(a=>a.onclick=(e)=>{e.preventDefault();sideLinks.forEach(x=>x.classList.remove('on'));a.classList.add('on');document.querySelectorAll('.tpanel').forEach(p=>p.classList.toggle('on',p.dataset.t===a.dataset.t));document.getElementById('app-title').textContent=a.textContent.replace('&','&');if(a.dataset.t==='impact')makeGrade();});
-let made=false, gradeMade=false;
-function makeCharts(){ if(made||!window.Chart) return; made=true;
- const grid={color:'#243129'}, tick={color:'#9fb3a5',font:{size:11}};
- new Chart(document.getElementById('c-tons'),{type:'bar',data:{labels:['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'],datasets:[{data:[212,198,231,205,220,244,238,251,262,240,242,268],backgroundColor:(c)=>c.dataIndex===11?'#7fe08f':'#2f5a3f',borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{grid:{display:false},ticks:tick},y:{grid:grid,ticks:tick,border:{display:false}}}}});
- new Chart(document.getElementById('c-price'),{type:'line',data:{labels:['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'],datasets:[{label:'Your price',data:[100,102,101,104,106,109,108,111,113,115,116,118],borderColor:'#7fe08f',backgroundColor:'rgba(127,224,143,.12)',fill:true,tension:.35,pointRadius:0,borderWidth:2},{label:'Published index',data:[90,91,90,93,94,96,96,98,100,101,102,104],borderColor:'#c9a97c',borderDash:[5,4],tension:.35,pointRadius:0,borderWidth:1.5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#c9d6cb',boxWidth:10,font:{size:11}}},tooltip:{enabled:false}},scales:{x:{grid:{display:false},ticks:tick},y:{display:false}}}});
-}
-function makeGrade(){ if(gradeMade||!window.Chart) return; gradeMade=true;
- new Chart(document.getElementById('c-impact'),{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'],datasets:[{data:[205,220,244,238,251,262,240,242,268],backgroundColor:'#2f5a3f',borderRadius:4,order:2},{type:'line',data:[205,425,669,907,1158,1420,1660,1902,2170],borderColor:'#7fe08f',pointRadius:0,borderWidth:2,tension:.3,yAxisID:'y2',order:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{grid:{display:false},ticks:{color:'#9fb3a5',font:{size:11}}},y:{grid:{color:'#243129'},ticks:{color:'#9fb3a5',font:{size:11}},border:{display:false}},y2:{position:'right',grid:{display:false},ticks:{color:'#7fe08f',font:{size:11}},border:{display:false}}}}});
- new Chart(document.getElementById('c-grade'),{type:'doughnut',data:{labels:['OCC','SOP','Mixed','DLK','Hard white'],datasets:[{data:[46,24,14,10,6],backgroundColor:['#2f5a3f','#7fe08f','#c9a97c','#4f7a5c','#e8d9bf'],borderColor:'#161d19',borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,cutout:'65%',plugins:{legend:{position:'right',labels:{color:'#c9d6cb',boxWidth:10,font:{size:11}}},tooltip:{enabled:false}}}});
-}
-window.addEventListener('load',()=>{makeCharts();});
-</script>
+<div class="band-l"><div class="wrap two">
+  <div><h2>Updated as loads ship</h2><p>Every load posts to your login when it crosses our scale. Status moves from scheduled to shipped to paid without a phone call.</p></div>
+  <div><h2>Built for multi-site programs</h2><p>One login can cover every plant in your network, with the same grades, the same reporting and the same people behind it — or a separate login per site if that's how you run.</p>
+  <div class="ul-links"><a href="contact.html">See it on a call</a></div></div>
+</div></div>
 <footer class="site-f"><div class="wrap"><div class="cols">
   <div><h4>Marcells Paper &amp; Metal Inc</h4><div class="phone"><a href="tel:+17732651200">(773) 265-1200</a></div><p style="font-size:14px">4221 W Ferdinand St, Chicago, IL 60624<br>Fax (773) 265-1220 · <a href="mailto:info@marcellspaper.com" style="display:inline">info@marcellspaper.com</a></p></div>
   <div><h4>Company</h4><a href="services.html">Services</a><a href="equipment.html">Equipment</a><a href="portal.html">Portal</a><a href="coverage.html">Coverage</a></div>
