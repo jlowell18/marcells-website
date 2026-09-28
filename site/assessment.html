@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free waste stream assessment | Marcells Paper &amp; Metal</title>
+<meta name="description" content="Book a free 30-minute waste stream assessment on Microsoft Teams or at your site. Bring your current statements and we&#x27;ll show you what your material is worth.">
+<meta property="og:title" content="Free waste stream assessment | Marcells Paper &amp; Metal">
+<meta property="og:description" content="Book a free 30-minute waste stream assessment on Microsoft Teams or at your site. Bring your current statements and we&#x27;ll show you what your material is worth.">
+<meta property="og:image" content="https://marcellspaper.com/assets/mpm2-bales.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=8">
+</head>
+<body>
+<div class="topbar"><div class="hin"><span><b>Family-owned since 1979</b><span class="dot">·</span>Programs nationwide<span class="dot">·</span>Domestic &amp; export mills<span class="dot">·</span>Chicago, IL</span><span><b><a href="tel:+17732651200">(773) 265-1200</a></b></span></div></div>
+<header class="site-h"><div class="hin">
+  <a class="brand" href="index.html"><img src="assets/logo.webp" alt="Marcells Paper &amp; Metal"></a>
+  <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav.site-n').classList.toggle('open')">&#9776;</button>
+  <nav class="site-n"><a href="services.html">Services</a><a href="equipment.html">Equipment</a><a href="portal.html">Portal</a><span class="has-sub"><a href="paper.html">Materials &#9662;</a><span class="sub"><a href="paper.html">Paper</a><a href="metal.html">Metal</a><a href="plastics.html">Plastics</a><a href="pallets.html">Pallets</a><a href="secure-destruction.html">Secure destruction</a></span></span><a href="coverage.html">Coverage</a><a href="about.html">About</a><a class="login" href="https://portals.cietrade.com/MarcellsPaperPortal/login.aspx" target="_blank" rel="noopener">Client Login</a><a class="cta" href="assessment.html">Free assessment</a></nav>
+</div></header>
+<div class="head-g"><div class="wrap"><div class="pre">Free waste stream assessment</div><h1>Let's look at what's going out your door.</h1>
+<p class="lead">Thirty minutes, on Teams or at your site. We look at your grades, volumes and how material leaves today — and show you what it's worth, what it's costing you, and what a program with MPM would look like. No cost, no obligation.</p></div><div class="tear" aria-hidden="true"><svg viewBox="0 0 1200 28" preserveAspectRatio="none"><path d="M0 14 L38 6 L71 18 L113 4 L152 16 L190 8 L236 20 L271 6 L318 17 L352 3 L399 15 L441 9 L482 21 L530 7 L563 18 L611 5 L648 16 L690 10 L734 22 L779 6 L812 15 L861 3 L903 18 L942 8 L988 19 L1032 6 L1071 16 L1118 4 L1160 17 L1200 9 L1200 28 L0 28 Z"/></svg></div></div>
+
+<section><div class="wrap asm">
+  <div class="asm-side">
+    <h2>What you get</h2>
+    <ul class="asm-list">
+      <li><b>A straight read on your stream.</b> Grades, weights, trucks, what's baled and what's loose — and where you're paying to move air.</li>
+      <li><b>What it's worth.</b> How your material should be graded and sold, mill-direct, domestic or export.</li>
+      <li><b>What it's costing you.</b> Hauling, pulls, contamination, equipment — the numbers that don't show up on a statement.</li>
+      <li><b>Your reporting, previewed.</b> The live portal and environmental impact report your team would get.</li>
+    </ul>
+    <div class="asm-stmt"><h3>Bring your statements</h3><p>Upload a recent statement or invoice from your current recycler or hauler and we'll come to the meeting with a line-by-line comparison. Optional, and seen only by us.</p></div>
+    <p class="asm-call">Rather talk now? <a href="tel:+17732651200">(773) 265-1200</a></p>
+  </div>
+
+  <div class="box form asm-form">
+    <div id="asm-err" class="asm-err" hidden></div>
+    <form action="https://portal.marcellspaper.com/api/assessment-request" method="post" enctype="multipart/form-data" id="asm">
+      <h3>1. How should we meet?</h3>
+      <div class="radios">
+        <label class="chip"><input type="radio" name="meeting" value="teams" checked><span>Microsoft Teams</span></label>
+        <label class="chip"><input type="radio" name="meeting" value="onsite"><span>At our site</span></label>
+        <label class="chip"><input type="radio" name="meeting" value="mpm"><span>At MPM, Chicago</span></label>
+      </div>
+
+      <h3>2. When works for you? <small>Pick as many as you like — Central time</small></h3>
+      <label class="chip any"><input type="checkbox" id="anytime"><span>Any of these work</span></label>
+      <div class="slots" id="slots"><noscript><p>Tell us a few days and times below.</p></noscript></div>
+      <label for="other_times">Other days or times</label><input id="other_times" name="other_times" placeholder="e.g. any Thursday after 2, or the week of the 12th">
+
+      <h3>3. About you</h3>
+      <div class="two-f">
+        <div><label for="name">Name *</label><input id="name" name="name" required autocomplete="name"></div>
+        <div><label for="title">Title</label><input id="title" name="title" autocomplete="organization-title"></div>
+        <div><label for="company">Company *</label><input id="company" name="company" required autocomplete="organization"></div>
+        <div><label for="location">City, state</label><input id="location" name="location" placeholder="Where the material is"></div>
+        <div><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+      </div>
+      <label for="contact_pref">Best way to confirm the meeting</label>
+      <select id="contact_pref" name="contact_pref"><option>Email</option><option>Phone call</option><option>Text</option></select>
+
+      <h3>4. What's going out <small>Rough is fine</small></h3>
+      <label>Materials</label><div class="chips"><label class="chip"><input type="checkbox" name="material" value="Cardboard / OCC"><span>Cardboard / OCC</span></label><label class="chip"><input type="checkbox" name="material" value="Office paper"><span>Office paper</span></label><label class="chip"><input type="checkbox" name="material" value="Mixed paper"><span>Mixed paper</span></label><label class="chip"><input type="checkbox" name="material" value="Printing & converting trim"><span>Printing &amp; converting trim</span></label><label class="chip"><input type="checkbox" name="material" value="Rolls / roll ends"><span>Rolls / roll ends</span></label><label class="chip"><input type="checkbox" name="material" value="Confidential / shred"><span>Confidential / shred</span></label><label class="chip"><input type="checkbox" name="material" value="Plastics"><span>Plastics</span></label><label class="chip"><input type="checkbox" name="material" value="Metal"><span>Metal</span></label><label class="chip"><input type="checkbox" name="material" value="Pallets"><span>Pallets</span></label></div>
+      <div class="two-f">
+        <div><label for="packing">How it's packed</label><select id="packing" name="packing"><option value="">—</option><option>Baled</option><option>Loose</option><option>Some of both</option><option>Not sure</option></select></div>
+        <div><label for="sites">Number of sites</label><select id="sites" name="sites"><option>1</option><option>2–5</option><option>6–20</option><option>20+</option></select></div>
+        <div><label for="current">Where it goes today</label><select id="current" name="current"><option value="">—</option><option>Another recycler buys it</option><option>Our hauler takes it</option><option>It goes out with the trash</option><option>We're just starting a program</option></select></div>
+        <div><label for="volume">Roughly how much</label><input id="volume" name="volume" placeholder="e.g. 2 trailers a month"></div>
+      </div>
+
+      <h3>5. Add your statements <small>Optional</small></h3>
+      <label class="drop"><input type="file" name="statements" multiple accept=".pdf,.jpg,.jpeg,.png,.heic,.webp,.xlsx,.xls,.csv,.doc,.docx"><span>Choose files — PDF, photo or spreadsheet, up to 6 files / 20 MB</span></label>
+      <label for="notes">Anything else we should know?</label><textarea id="notes" name="notes" rows="3" placeholder="Dock hours, equipment on site, what's bugging you about your current program…"></textarea>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <p style="margin-top:20px"><button class="btn" type="submit" id="asm-go">Request my assessment</button></p>
+      <p class="asm-fine">We'll reach out personally within one business day to confirm a time and send the invite.</p>
+    </form>
+  </div>
+</div></section>
+<script>
+(function(){
+  var days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],mons=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var blocks=[['Morning','8–11 am'],['Midday','11–1'],['Afternoon','1–4 pm']];
+  var box=document.getElementById('slots'),d=new Date(),n=0,h='<div class="sh"></div>'+blocks.map(function(b){return '<div class="sh">'+b[0]+'<small>'+b[1]+'</small></div>'}).join('');
+  d.setDate(d.getDate()+1);
+  while(n<10){ if(d.getDay()>0&&d.getDay()<6){ var lab=days[d.getDay()]+' '+mons[d.getMonth()]+' '+d.getDate();
+      h+='<div class="sd">'+lab+'</div>'+blocks.map(function(b){var v=lab+' · '+b[0]+' ('+b[1]+')';return '<label class="slot"><input type="checkbox" name="slot" value="'+v+'"><span></span></label>'}).join(''); n++; }
+    d.setDate(d.getDate()+1); }
+  box.innerHTML=h;
+  document.getElementById('anytime').addEventListener('change',function(e){box.querySelectorAll('input').forEach(function(i){i.checked=e.target.checked})});
+  var err={missing:'Please add your name, company and a valid email.',files:'Those files were too large or too many — up to 6 files, 20 MB total.',rate:'We already have a few requests from you — give us a call at (773) 265-1200.',form:'Something went wrong sending the form — please try again or call (773) 265-1200.'}[(location.search.match(/error=(\w+)/)||[])[1]];
+  if(err){var e=document.getElementById('asm-err');e.textContent=err;e.hidden=false;}
+  document.getElementById('asm').addEventListener('submit',function(){var b=document.getElementById('asm-go');b.disabled=true;b.textContent='Sending…';});
+})();
+</script>
+
+<footer class="site-f"><div class="wrap"><div class="cols">
+  <div><h4>Marcells Paper &amp; Metal Inc</h4><div class="phone"><a href="tel:+17732651200">(773) 265-1200</a></div><p style="font-size:14px">4221 W Ferdinand St, Chicago, IL 60624<br>Fax (773) 265-1220 · <a href="mailto:info@marcellspaper.com" style="display:inline">info@marcellspaper.com</a></p></div>
+  <div><h4>Company</h4><a href="services.html">Services</a><a href="equipment.html">Equipment</a><a href="portal.html">Portal</a><a href="coverage.html">Coverage</a></div>
+  <div><h4>Materials</h4><a href="paper.html">Paper</a><a href="metal.html">Metal</a><a href="plastics.html">Plastics</a><a href="pallets.html">Pallets</a><a href="secure-destruction.html">Secure destruction</a></div>
+  <div><h4>More</h4><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="assessment.html">Free assessment</a><a href="https://portals.cietrade.com/MarcellsPaperPortal/login.aspx" target="_blank" rel="noopener" style="color:#fff;font-weight:700">Client Login →</a></div>
+</div><div class="copy"><span>&copy; 2026 Marcells Paper and Metal Inc · Chicago, IL</span><span>Family-owned since 1979</span></div></div></footer>
+</body>
+</html>
