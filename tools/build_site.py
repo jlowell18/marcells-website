@@ -5,7 +5,7 @@ from content import PAGES
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "site")
 PHONE = "(773) 265-1200"; PHONE_TEL = "+17732651200"; FAX = "(773) 265-1220"
-EMAIL = "info@marcellspaper.com"; PORTAL = "https://portals.cietrade.com/MarcellsPaperPortal/login.aspx"
+EMAIL = "info@marcellspaper.com"; PORTAL = "https://portal.marcellspaper.com"
 NAV = [("Services", "services.html"), ("Equipment", "equipment.html"), ("Portal", "portal.html"),
        ("Materials", "paper.html", [("Paper", "paper.html"), ("Metal", "metal.html"), ("Plastics", "plastics.html"), ("Pallets", "pallets.html"), ("Secure destruction", "secure-destruction.html")]),
        ("Coverage", "coverage.html"), ("About", "about.html")]
