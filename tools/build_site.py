@@ -10,6 +10,14 @@ NAV = [("Services", "services.html"), ("Equipment", "equipment.html"), ("Portal"
        ("Materials", "paper.html", [("Paper", "paper.html"), ("Metal", "metal.html"), ("Plastics", "plastics.html"), ("Pallets", "pallets.html"), ("Secure destruction", "secure-destruction.html")]),
        ("Coverage", "coverage.html"), ("About", "about.html")]
 MATERIAL_PAGES = {"paper.html", "metal.html", "plastics.html", "pallets.html", "secure-destruction.html"}
+SITE = "https://marcellspaper.com"
+# Pages left out of sitemap.xml: nothing on the site links to them (the form sends people there).
+NOT_IN_SITEMAP = {"assessment-thanks"}
+
+def address(slug):
+    """The one public address of a page. Cloudflare Pages serves about.html at /about, and the home page at /."""
+    name = slug[:-5] if slug.endswith(".html") else slug
+    return SITE + "/" if name == "index" else SITE + "/" + name
 
 def page(slug, title, desc, body):
     year = datetime.date.today().year
@@ -29,6 +37,7 @@ def page(slug, title, desc, body):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
+<link rel="canonical" href="{address(slug)}">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:image" content="https://marcellspaper.com/assets/mpm2-bales.jpg">
@@ -71,6 +80,17 @@ def build():
             "/paper-waste-collection /paper 301", "/paper-waste-collection.html /paper 301",
             "/paper-recycling /paper 301", "/paper-recycling.html /paper 301",
         ]) + "\n")
+    # robots.txt lets every crawler read everything and names the sitemap.
+    with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8") as f:
+        f.write("User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % SITE)
+    # sitemap.xml lists every page a visitor can reach from the site. No dates: the build cannot prove them.
+    with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+        for slug in PAGES:
+            if slug not in NOT_IN_SITEMAP:
+                f.write("  <url><loc>%s</loc></url>\n" % html.escape(address(slug)))
+        f.write("</urlset>\n")
+    print("wrote robots.txt, sitemap.xml")
 
 if __name__ == "__main__":
     build()
